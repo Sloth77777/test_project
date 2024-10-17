@@ -10,32 +10,30 @@ body {
     flex-direction: row; /* Устанавливаем горизонтальное направление для широких экранов */
     height: 100vh;
 }
+
 @media only screen and (max-width: 768px) {
     .sidebar {
         display: none !important; /* Скрываем сайдбар */
     }
 
-    body {
-        flex-direction: column; /* Вертикальное направление для мобильных устройств */
-    }
-
-    .toggle-sidebar{
-        background: none;
-        border: none;
-    }
     .main-content {
         width: 320px;
         height: 547px;
         top: 96px;
-        border: 1px solid;
-        margin: 96px 0 0; /* Отступ сверху под логотип */
+        margin-top: 96px; /* Отступ сверху под логотип */
+        border: 1px solid; /* Граница (при необходимости) */
         padding: 20px; /* Отступы внутри */
+        display: flex; /* Flexbox для выравнивания содержимого */
+        flex-direction: column; /* Вертикальное направление для форм */
+        align-items: center; /* Центрируем формы по горизонтали */
+        justify-content: center; /* Центрируем формы по вертикали */
     }
 
     .forms-container {
-        display: flex; /* Используем flexbox */
+        width: 100%; /* Полная ширина для контейнера форм */
+        display: flex;
         flex-direction: column; /* Вертикальное направление для форм */
-        align-items: center; /* Выравнивание по центру */
+        align-items: center; /* Центрируем формы по горизонтали */
         gap: 15px; /* Отступ между формами */
     }
 
@@ -45,17 +43,11 @@ body {
         margin: 0; /* Убираем внешние отступы */
     }
 
-    input[type="password"],
-    input[type="language"] {
-        height: 40px; /* Уменьшаем высоту полей ввода */
-    }
-
     .save-button {
         width: 100%; /* Полная ширина кнопки на мобильной версии */
         max-width: 290px; /* Ограничиваем максимальную ширину кнопки */
     }
-}
-.logo {
+}.logo {
     text-align: center;
     display: flex;
     justify-content: center;
@@ -277,4 +269,3 @@ input[type='language'] {
 input[type='language']::placeholder {
     color: #2B2B2B;
 }
-
