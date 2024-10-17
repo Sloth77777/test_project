@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Учитываем padding и border в ширине и высоте элементов */
+}
+
+body {
+    background: #1C182F;
+    display: flex; /* Используем flexbox для центрирования */
+    justify-content: center; /* Центрируем по горизонтали */
+    align-items: center; /* Центрируем по вертикали */
+    height: 100vh; /* Высота вьюпорта */
+}
+
+.container {
+    text-align: center; /* Центрируем текст внутри контейнера */
+}
+
+.logo {
+    width: 190px;
+    height: 52px;
+    margin: 0 auto;
+    display: block;
+}
+
+.language-buttons {
+    padding-left: 30%;
+    display: flex; /* Используем flexbox для расположения кнопок в ряд */
+    gap: 10px; /* Отступы между кнопками */
+    margin-top: 20px;
+}
+
+.lang-button {
+    width: 40px; /* Увеличиваем ширину кнопок */
+    height: 30px;
+    color: #5B5967;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none; /* Убираем подчеркивание */
+    cursor: pointer;
+}
+
+.lang-button:hover {
+    color: #FFFFFF;
+}
+
+.signin-form {
+    background: #FFFFFF;
+    width: 352px;
+    margin: 15px auto;
+    border-radius: 15px;
+    text-align: center;
+    padding: 20px;
+}
+
+.form-title {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 43.65px;
+    text-align: center;
+    color: #2B2B2B;
+    margin: 30px 0 20px 0;
+
+}
+
+.input-container {
+    position: relative; /* Позволяет иконке быть абсолютной относительно контейнера */
+    width: 100%;
+}
+
+.frame-icon {
+    position: absolute; /* Позволяет позиционировать иконку внутри контейнера */
+    right: 10px; /* Отступ от правого края */
+    top: 50%; /* Вертикальное центрирование */
+    transform: translateY(-50%); /* Центрирование по вертикали */
+}
+
+.frame-icon img {
+    width: 16px; /* Ширина иконки */
+    height: 16px; /* Высота иконки */
+}
+
+input[type="email"] {
+    width: 100%;
+    height: 50px;
+    border-radius: 4px;
+    border: 1px solid #E2E2E2;
+    padding-right: 30px; /* Отступ для текста, чтобы не пересекался с иконкой */
+    padding-left: 10px; /* Отступ для текста слева */
+}
+
+input[type="password"] {
+    width: 100%;
+    height: 50px;
+    border-radius: 4px;
+    border: 1px solid #E2E2E2;
+    padding-right: 30px; /* Отступ для текста, чтобы не пересекался с иконкой */
+    padding-left: 10px; /* Отступ для текста слева */
+}
+
+#email:hover, #email:focus, #password:hover, #password:focus {
+    border: 1px solid #E33E3E;
+}
+
+.email-confirmation-message {
+    display: flex;
+    align-items: center;
+}
+
+.confirmation-text {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.1px;
+    text-align: left;
+    color: #E33E3E;
+    margin: 10px 0;
+}
+
+input[type="password"]::placeholder,
+input[type="email"]::placeholder {
+    color: #999;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21.82px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.resend-email {
+    font-family: Nunito Sans;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.1px;
+    text-align: right;
+    text-decoration: none;
+    margin-left: 55px;
+
+    display: inline;
+}
+
+.Forgot {
+    font-family: Nunito Sans;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20.46px;
+    text-align: right;
+
+    text-decoration: none;
+    display: block; /* Обеспечиваем блочное отображение */
+    margin-top: 5px; /* Отступ сверху */
+}
+
+.submit-button {
+    background: #534686;
+    width: 292px;
+    height: 50px;
+    border-radius: 4px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 24.55px;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 20px 0;
+}
+
+.text_button {
+    color: #898989;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20.46px;
+    text-align: center;
+}
+
+.text_button a {
+    color: #534686;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 20.46px;
+    text-align: center;
+    text-decoration: none;
+}

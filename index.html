@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TEST_Project</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <img src="css/img/logo.png" alt="" class="logo">
+    <div class="language-buttons">
+        <a class="lang-button">En</a>
+        <a class="lang-button">Ru</a>
+        <a class="lang-button">Ua</a>
+    </div>
+    <form action="/submit-form" method="post" class="signin-form">
+        <div class="form-title">Sign In</div>
+        <div class="input-container">
+            <input type="email" id="email" name="email" required placeholder="test@gmail.com">
+            <span class="frame-icon"><img src="css/img/Frame.png" alt="Email Icon"></span>
+        </div>
+
+        <div class="email-confirmation-message">
+            <div class="confirmation-text">Your email hasn’t been confirmed</div>
+            <a href="#" class="resend-email">Resend</a>
+        </div>
+
+
+        <div class="input-container">
+            <input type="email" id="password" name="password" required placeholder="**************">
+            <span class="frame-icon">
+                <img src="css/img/Frame_pass.png" alt="Email Icon">
+            </span>
+        </div>
+
+        <a href="#" class="Forgot">Forgot password</a>
+
+        <button type="submit" class="submit-button">Sign In</button>
+        <div class="text_button">Don’t have an Account? <a href="#">Sign Up</a></div>
+    </form>
+</div>
+</body>
+</html>

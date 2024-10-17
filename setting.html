@@ -1,10 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Settings</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style_set.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-$END$
+
+<div class="container">
+        <div class="header-logo">
+            <img src="css/img_set/logo_set.png" alt="Logo" class="logo-img">
+        </div>
+    <button type="submit" class="toggle-sidebar"><img src="css/img_set/menu.png" alt="Menu Icon"></button>
+
+    <div class="sidebar">
+        <div class="logo">
+            <img src="css/img_set/logo_set.png" alt="Logo">
+        </div>
+        <div class="line"></div>
+        <div class="username">
+            <div class="nav-item">
+                <span class="frame-icon"><img src="css/img_set/username.png" alt=""></span>
+                John05test@gmail.com
+            </div>
+        </div>
+        <div class="line"></div>
+
+        <nav class="navigation">
+            <a href="#" class="nav-item">
+                <span class="frame-icon"><img src="css/img_set/goals.png" alt=""></span>
+                Goals
+            </a>
+            <a href="#" class="nav-item">
+                <span class="frame-icon"><img src="css/img_set/Group.png" alt=""></span>
+                Notes
+            </a>
+            <a href="#" class="nav-item">
+                <span class="frame-icon"><img src="css/img_set/billing.png" alt=""></span>
+                Billing
+            </a>
+            <a href="#" class="nav-item">
+                <span class="frame-icon"><img src="css/img_set/reminders.png" alt=""></span>
+                Reminders
+            </a>
+            <a href="#" class="nav-item">
+                <span class="frame-icon"><img src="css/img_set/setting.png" alt=""></span>
+                Settings
+            </a>
+        </nav>
+        <div class="line"></div>
+
+        <a href="#" class="nav-item">
+            <span class="frame-icon"><img src="css/img_set/logout.png" alt=""></span>
+            Logout
+        </a>
+
+        <button class="contact-button">
+            Contact Us
+        </button>
+    </div>
+</div>
+<div class="main-content">
+    <div class="form-title">Settings</div>
+    <div class="forms-container">
+        <div class="change-password-section">
+            <!-- Форма смены пароля -->
+            <form action="/submit-form" method="post" class="signun-form">
+                <div class="form-title-pass">Change password</div>
+
+                <div class="input-container">
+                    <input type="password" id="old_pass" name="old_password" required placeholder="Old password">
+                    <span class="frames-icon">
+                        <img src="css/img/Frame_pass.png" alt="Password Icon">
+                    </span>
+                </div>
+
+                <div class="input-container">
+                    <input type="password" id="new_pass" name="new_password" required placeholder="New password">
+                    <span class="frames-icon">
+                        <img src="css/img/Frame_pass.png" alt="Password Icon">
+                    </span>
+                </div>
+
+                <div class="input-container">
+                    <input type="password" id="confirm_new_pass" name="confirm_new_password" required
+                           placeholder="Confirm new password">
+                    <span class="frames-icon">
+                        <img src="css/img/Frame_pass.png" alt="Password Icon">
+                    </span>
+                </div>
+
+                <button type="submit" class="save-button">Save</button>
+            </form>
+        </div>
+
+        <div class="change-language-section">
+            <!-- Форма смены языка -->
+            <form action="/submit-form" method="post" class="language-form">
+                <div class="form-title-pass">Change language</div>
+
+                <div class="input-container">
+                    <input type="language" id="" name="language" placeholder="English" list="Language">
+                    <datalist id="Language">
+                        <option>Ukraine</option>
+                        <option>Polish</option>
+                    </datalist>
+                </div>
+
+                <button type="submit" class="save-button">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
