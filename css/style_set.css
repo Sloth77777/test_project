@@ -11,43 +11,7 @@ body {
     height: 100vh;
 }
 
-@media only screen and (max-width: 768px) {
-    .sidebar {
-        display: none !important; /* Скрываем сайдбар */
-    }
-
-    .main-content {
-        width: 320px;
-        height: 547px;
-        top: 96px;
-        margin-top: 96px; /* Отступ сверху под логотип */
-        border: 1px solid; /* Граница (при необходимости) */
-        padding: 20px; /* Отступы внутри */
-        display: flex; /* Flexbox для выравнивания содержимого */
-        flex-direction: column; /* Вертикальное направление для форм */
-        align-items: center; /* Центрируем формы по горизонтали */
-        justify-content: center; /* Центрируем формы по вертикали */
-    }
-
-    .forms-container {
-        width: 100%; /* Полная ширина для контейнера форм */
-        display: flex;
-        flex-direction: column; /* Вертикальное направление для форм */
-        align-items: center; /* Центрируем формы по горизонтали */
-        gap: 15px; /* Отступ между формами */
-    }
-
-    .input-container {
-        width: 100%; /* Полная ширина для форм на мобильных */
-        max-width: 290px; /* Ограничиваем максимальную ширину формы */
-        margin: 0; /* Убираем внешние отступы */
-    }
-
-    .save-button {
-        width: 100%; /* Полная ширина кнопки на мобильной версии */
-        max-width: 290px; /* Ограничиваем максимальную ширину кнопки */
-    }
-}.logo {
+.logo {
     text-align: center;
     display: flex;
     justify-content: center;
@@ -70,7 +34,12 @@ body {
     position: fixed;
     top: 0;
     left: 0;
+}
 
+@media only screen and (max-width: 768px) {
+    .sidebar {
+        display: none !important; /* Скрываем сайдбар */
+    }
 }
 
 .username {
@@ -141,18 +110,28 @@ body {
     top: 24px;
     left: 250px;
     border-radius: 10px;
-    margin-top: 24px;
-    margin-right: 20px;
-    margin-left: 186px; /* Отступ слева для учета sidebar */
+    margin: 20px 20px 20px 145px;
     border: 1px solid #E2E2E2;
     background: #EFF3F9;
     padding: 40px; /* Добавим отступы внутри */
     flex: 1; /* Занимает оставшееся пространство на широких экранах */
 }
 
+
+@media only screen and (max-width: 768px) {
+    .main-content {
+        width: 100%; /* Полная ширина для мобильных устройств */
+        padding: 20px; /* Отступы внутри */
+        border: 1px solid #E2E2E2; /* Граница */
+        border-radius: 0;
+        height: auto; /* Изменяем на auto, чтобы контент не выходил за пределы */
+        margin: 65px 0 0 0;
+    }
+}
+
 .line {
     width: 250px;
-    height: 0px;
+    height: 1px;
     border: 1px solid #2D2847;
 }
 
@@ -165,11 +144,26 @@ body {
     margin-bottom: 20px; /* Отступ снизу, чтобы заголовок не прижимался к формам */
 }
 
+@media only screen and (max-width: 768px) {
+    .form-title {
+        font-family: Nunito Sans;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 24.55px;
+        text-align: left;
+        width: auto; /* Убираем фиксированную ширину */
+        margin-bottom: 10px; /* Уменьшаем отступ снизу */
+    }
+}
+
 .forms-container {
+    width: 352px;
+    height: 352px;
+    top: 127px;
+    left: 300px;
     display: flex; /* Flexbox для размещения форм в один ряд */
-    justify-content: flex-start; /* Выравнивание форм слева направо */
-    align-items: flex-start; /* Выравнивание форм по верхнему краю */
-    gap: 20px; /* Отступ между формами */
+    gap: 15px; /* Отступ между формами */
+    flex-wrap: nowrap; /* Элементы не будут переноситься на новую строку */
 }
 
 .form-title-pass {
@@ -178,54 +172,66 @@ body {
     font-size: 16px;
     font-weight: 700;
     line-height: 21.82px;
-    padding: 25px 10px 5px 20px;
-    margin: 20px 13px;
+    margin: 0 13px;
+}
+
+@media only screen and (max-width: 768px) {
+    .form-title-pass {
+        margin: 10px 0;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 19.1px;
+        text-align: left;
+    }
 }
 
 .input-container {
     position: relative;
-    width: 292px;
-    margin: 20px 30px;
-
+    margin: 20px 0; /* Убираем боковые отступы для мобильных */
+    width: 292px; /* Установите фиксированную ширину инпутов */
+    flex: 1; /* Позволяет инпутам занимать равное пространство */
 }
 
-input[type="password"] {
-    width: 100%;
+input[type="password"],
+input[type='language'] {
+    width: 292px;
     height: 50px;
+    top: 199px;
+    left: 330px;
     border-radius: 4px;
     border: 1px solid #E2E2E2;
     padding-right: 30px;
     padding-left: 10px;
 }
 
-input[type="password"]::placeholder {
+input[type="password"]::placeholder,
+input[type='language']::placeholder {
     color: #2B2B2B;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 21.82px;
     padding-left: 10px;
-
 }
 
 .save-button {
-    margin: 20px 30px;
+    /*margin: 20px 0; !* Убираем боковые отступы *!*/
     text-align: center;
-    /*margin: auto;*/
     color: #FFFFFF;
     background: #534686;
     border: none;
     cursor: pointer;
     transition: background 0.3s;
     border-radius: 4px;
-    width: 292px;
+    width: 292px; /* Устанавливаем фиксированную ширину */
     height: 50px;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 18px;
     font-weight: 800;
     line-height: 24.55px;
-
+    /* Убираем top и left для абсолютного позиционирования */
 }
+
 
 .text_pass {
     font-family: 'Nunito Sans', sans-serif;
@@ -233,7 +239,7 @@ input[type="password"]::placeholder {
     font-weight: 700;
     line-height: 21.82px;
     text-align: left;
-    margin: 40px;
+    margin: 40px 0; /* Убираем боковые отступы */
 }
 
 .frames-icon {
@@ -243,29 +249,96 @@ input[type="password"]::placeholder {
     transform: translateY(-50%);
 }
 
-.change-password-section, .change-language-section {
+.change-password-section {
     width: 352px;
+    height: 352px;
+    top: 127px;
+    left: 300px;
+
     background: #FFFFFF;
     border-radius: 10px;
-}
+    padding: 20px; /* Добавим отступы внутри */
+    margin: 10px 0; /* Отступы между секциями */
 
-.change-password-section {
-    margin: 0; /* Убираем внешние отступы */
 }
 
 .change-language-section {
-    margin: 0; /* Убираем внешние отступы */
+    width: 352px;
+    height: 222px;
+    top: 127px;
+    left: 672px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    padding: 20px; /* Добавим отступы внутри */
+    margin: 10px 0; /* Отступы между секциями */
 }
 
-input[type='language'] {
-    width: 100%;
-    height: 50px;
-    border-radius: 4px;
-    border: 1px solid #E2E2E2;
-    padding-right: 30px;
-    padding-left: 10px;
+@media only screen and (max-width: 768px) {
+    .change-password-section,
+    .change-language-section {
+        width: 90%; /* Ширина секций на мобильных */
+        margin: 10px auto; /* Центрируем секции */
+    }
+
+    input[type="password"]{
+
+    }
+    input[type="password"]::placeholder,
+    input[type='language']::placeholder {
+        font-family: Nunito Sans;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 20.46px;
+        text-align: left;
+    }
+
+    .forms-container {
+        width: 100%; /* Полная ширина для контейнера форм */
+        flex-direction: column; /* Вертикальное направление для форм */
+        align-items: center; /* Центрируем формы по горизонтали */
+        gap: 15px; /* Отступ между формами */
+    }
 }
 
-input[type='language']::placeholder {
-    color: #2B2B2B;
+
+@media only screen and (max-width: 768px) {
+
+    .header .logo {
+        width: 32px;
+        height: 32px;
+    }
+
+    .header {
+        margin-top: 10px;
+        position: absolute;
+        display: flex;
+        width: 100%; /* Устанавливаем полную ширину для шапки */
+        top: 0;
+        left: 0;
+        justify-content: space-between; /* Распределяем элементы равномерно */
+        align-items: center; /* Вертикальное выравнивание */
+        padding: 10px; /* Отступы внутри */
+        background: #1D1930; /* Цвет фона шапки */
+    }
+
+    .header .user-info {
+        color: #A4A3BD; /* Цвет текста */
+        font-family: 'Nunito Sans', sans-serif; /* Шрифт */
+        font-size: 16px; /* Размер шрифта */
+        font-weight: 400; /* Жирность */
+        line-height: 21.82px; /* Высота строки */
+    }
+
+    .header .user-info {
+        font-size: 14px; /* Уменьшаем размер шрифта для мобильных */
+    }
+
+    .header .logo {
+        width: 24px; /* Уменьшаем ширину логотипа для мобильных */
+        height: 24px; /* Уменьшаем высоту логотипа для мобильных */
+    }
+
+    .toggle-sidebar {
+        opacity: 1;
+    }
 }
